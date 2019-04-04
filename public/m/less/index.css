@@ -1,0 +1,157 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  outline: none;
+  border: none;
+  vertical-align: middle;
+}
+html {
+  font-size: 26.6667vw;
+}
+body {
+  font-size: .14rem;
+  line-height: .14rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+  margin: 0;
+}
+#header {
+  background-color: #e6002d;
+  display: flex;
+
+}
+#header .left {
+  width: .5rem;
+  height: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .left img {
+  border-radius: 50%;
+  width: 50%;
+}
+#header .center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#header .center h4 {
+  color: #fff;
+  font-size: .25rem;
+}
+#header .right {
+  width: .5rem;
+  height: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .right a {
+  color: #fff;
+  font-size: .24rem;
+}
+#main {
+  flex: 1;
+  background-color: #ccc;
+  overflow: hidden;
+  position: relative;
+}
+#footer {
+  height: .45rem;
+  background-color: #4c4c4c;
+}
+#footer .mui-row > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: .45rem;
+}
+#footer .mui-row > div .fa {
+  color: #fff;
+  font-size: .3rem;
+}
+#footer .mui-row > div .fa.active {
+  color: gold;
+}
+#nav {
+  padding: .1rem;
+}
+#nav .mui-row > div a {
+  display: block;
+}
+#nav .mui-row > div a img {
+  width: 100%;
+}
+#banner {
+  padding: .1rem;
+}
+#banner .mui-row {
+  height: 2.4rem;
+}
+#banner .mui-row .mui-col-xs-8 {
+  height: 100%;
+}
+#banner .mui-row .mui-col-xs-8 > div > div a {
+  display: block;
+}
+#banner .mui-row .mui-col-xs-8 > div > div a img {
+  width: 100%;
+}
+#banner .mui-row .mui-col-xs-4 {
+  height: 100%;
+}
+#banner .mui-row .mui-col-xs-4 a {
+  display: block;
+}
+#banner .mui-row .mui-col-xs-4 a img {
+  width: 100%;
+  height: 2.42rem;
+}
+#brand a {
+  display: block;
+}
+#brand img {
+  width: 100%;
+}
+#product .mui-row .mui-col-xs-6 a {
+  display: block;
+}
+#product .mui-row .mui-col-xs-6 a img {
+  width: 100%;
+}
+#partner .top {
+  height: .4rem;
+  background-color: #fff;
+}
+#partner .top a {
+  display: block;
+  line-height: .4rem;
+}
+#partner .top a img {
+  width: 100%;
+}
+#partner .center a {
+  display: block;
+}
+#partner .center a img {
+  width: 100%;
+}
+#partner .buttom .mui-row > div img {
+  width: 100%;
+}

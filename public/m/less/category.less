@@ -1,0 +1,92 @@
+
+@import 'base.less';
+
+
+#header{
+    .left{
+        a{
+            color: #fff;
+            font-size: .25rem;
+        }
+    }
+    .center{
+        
+        padding: .05rem;
+        form{
+            input{
+                background-color: #fff;
+                margin-bottom: 0;
+                text-align: left;
+            }
+        }
+    }
+    .right{
+
+    }
+}
+
+
+#main{
+    display: flex;
+    padding-right: .1rem;
+    #commList{
+        width: .6rem;
+        position: relative;
+        >div{
+            ul{
+                li{
+                    padding: .15rem .05rem;
+                    text-align: center;
+                    &::after{
+                        left: 0;
+                    }
+                    &.active{
+                        color: @main-color;
+                        background-color: #ccc;
+                    }
+                }
+            }
+        }
+    }
+    #commShow{
+        flex: 1;
+        padding: .05rem .1rem;
+        position: relative;
+        .top{
+            a{
+                display: block;
+                img{
+                    width: 100%;
+                }
+            }
+            h4{
+                line-height: .4rem;
+                text-align: center;
+                color: #5f5f5f;
+            }
+        }
+        .center{
+            background-color: #fff;
+            .mui-row{
+                >div{
+                    .dfcc();
+                    a{
+                        display: block;
+                        img{
+                            width: .66rem;
+                        }
+                    }
+                }
+            }
+        }
+        h4{
+            line-height: .4rem;
+            text-align: center;
+            color: #5f5f5f;
+        }
+        .buttom{
+            
+            
+        }
+    }
+}
