@@ -1,0 +1,73 @@
+
+@import 'base.less';
+
+#header{
+    .left{
+        a{
+            color: #fff;
+            font-size: .2rem;
+        }
+    }
+}
+
+
+#main{
+    background-color: #fff;
+    .dfy();
+    .searchBox{
+        height: 1rem;
+        form{
+            display: flex;
+            padding: .2rem;
+            #userText{
+                height: .4rem;
+                margin-bottom: 0;
+                border: .01rem solid @main-color;
+                border-radius: .06rem 0 0 .06rem;
+                border-right: 0;
+                text-align: left;
+                background-color: #fff;
+            }
+            #btnSearch{
+                width: .5rem;
+                height:.42rem;
+                background-color: @main-color;
+                margin-top: -0.01rem;
+                border: 0;
+                i{
+                    font-size: .2rem
+                }
+            }
+        }
+    }
+    .history{
+        padding: .1rem;
+        flex: 1;
+        overflow: hidden;
+        >div{
+            height: 100%;
+            .dfy();
+            .hisRecord{
+                height: .50rem;
+                span{
+
+                }
+                a{
+                    color: #333;
+                }
+            }
+            .hisCenter{
+                flex: 1;
+                position: relative;
+                ul{
+                    li{
+                        padding: .12rem;
+                        .mui-table-view-cell:after{
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

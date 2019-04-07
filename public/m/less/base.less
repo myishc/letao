@@ -6,6 +6,11 @@
     justify-content: center;
     align-items: center;
 }
+.dfy(){
+    display: flex;
+    flex-direction: column;
+}
+
 ul{
     margin: 0;
     padding: 0;
@@ -50,6 +55,7 @@ h1,h2,h3,h4,h5{
             border-radius: 50%;
             width: 50%;
         }
+       
     }
     .center{
         flex:1;
@@ -78,6 +84,32 @@ h1,h2,h3,h4,h5{
     background-color: #ccc;
     overflow: hidden;
     position: relative;
+    .searchBox{
+        height: 1rem;
+        form{
+            display: flex;
+            padding: .2rem;
+            #userText{
+                height: .4rem;
+                margin-bottom: 0;
+                border: .01rem solid @main-color;
+                border-radius: .06rem 0 0 .06rem;
+                border-right: 0;
+                text-align: left;
+                background-color: #fff;
+            }
+            #btnSearch{
+                width: .5rem;
+                height:.42rem;
+                background-color: @main-color;
+                margin-top: -0.01rem;
+                border: 0;
+                i{
+                    font-size: .2rem
+                }
+            }
+        }
+    }
 }
 
 

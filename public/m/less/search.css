@@ -114,3 +114,64 @@ h5 {
 #footer .mui-row > div .fa.active {
   color: gold;
 }
+#header .left a {
+  color: #fff;
+  font-size: .2rem;
+}
+#main {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+#main .searchBox {
+  height: 1rem;
+}
+#main .searchBox form {
+  display: flex;
+  padding: .2rem;
+}
+#main .searchBox form #userText {
+  height: .4rem;
+  margin-bottom: 0;
+  border: 0.01rem solid #e6002d;
+  border-radius: .06rem 0 0 .06rem;
+  border-right: 0;
+  text-align: left;
+  background-color: #fff;
+}
+#main .searchBox form #btnSearch {
+  width: .5rem;
+  height: .42rem;
+  background-color: #e6002d;
+  margin-top: -0.01rem;
+  border: 0;
+}
+#main .searchBox form #btnSearch i {
+  font-size: 0.2rem;
+}
+#main .history {
+  padding: .1rem;
+  flex: 1;
+  overflow: hidden;
+}
+#main .history > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#main .history > div .hisRecord {
+  height: .50rem;
+}
+#main .history > div .hisRecord a {
+  color: #333;
+}
+#main .history > div .hisCenter {
+  flex: 1;
+  position: relative;
+}
+#main .history > div .hisCenter ul li {
+  padding: .12rem;
+}
+#main .history > div .hisCenter ul li .mui-table-view-cell:after {
+  left: 0;
+}

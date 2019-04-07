@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自己写的分类页</title>
+    <!-- 引入MUI框架css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标库 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己写的样式 -->
+    <link rel="stylesheet" href="./less/productList.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header id="header">
+        <div class="left">
+            <a href="index.html" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+           <h4>商品列表</h4>
+        </div>
+        <div class="right">
+            <a href="index.html" class="fa fa-home"></a>
+        </div>
+    </header>
+
+    <!-- 中心 -->
+    <main id="main">
+        <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="searchBox">
+                    <form action="#">
+                        <input id="userText" type="search" placeholder="请输入搜索内容">
+                        <button type="button" id="btnSearch" class="mui-btn-danger"><i
+                                class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="produstList">
+                    <div class="mui-card">
+                        <div class="mui-card-header listTop">
+                            <span class="active" data-type='time' data-ify='1'>上架时间<i
+                                    class="fa fa-angle-down"></i></span>
+                            <span data-type='num' data-ify='1'>销量<i class="fa fa-angle-down"></i></span>
+                            <span data-type='price' data-ify='1'>价格<i class="fa fa-angle-down"></i></span>
+                            <span data-type='good' data-ify='1'>好评<i class="fa fa-angle-down"></i></span>
+                        </div>
+                        <div class="mui-card-content listCenter">
+                            <div class="mui-row ">
+                                <!-- 模板 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 底部 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="./index.html" class="fa fa-home"></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="./category.html" class="fa fa-bars"></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#" class="fa fa-shopping-cart"></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#" class="fa fa-user"></a>
+            </div>   
+        </div>
+    </footer>
+</body>
+</html>
+
+<script id="produstTpl" type="text/html">
+    {{each list value}}
+        <div class="mui-col-xs-6">
+                <a href="#">
+                    <img src="{{value.pic[0].picAddr}}" alt="">
+                    <p>{{value.proName}}</p>
+                    <span>¥{{value.price}}</span>
+                    <del>¥{{value.oldPrice}}</del>
+                    <p>销量:{{value.num}}<i class='fa fa-shopping-cart addCart'></i></p>
+                </a>
+            </div>
+    {{/each}}
+</script>
+
+
+<!-- 引入zepto -->
+<script src="./lib/zepto/zepto.min.js"></script>
+<!-- 引入模板引擎 ,创建模板 -->
+<script src="./lib/artTemplate/template-web.js"></script>
+<!-- 引入MUI框架js -->
+<script src='./lib/mui/js/mui.js'></script>
+<!-- 引入自己写的就是代码 -->
+<script src="./js/productList.js"></script>
+
+
+

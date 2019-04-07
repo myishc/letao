@@ -135,19 +135,23 @@ h5 {
   text-align: center;
   color: #5f5f5f;
 }
-#main #commShow .center {
+#main #commShow .cTop {
   background-color: #fff;
 }
-#main #commShow .center .mui-row > div {
+#main #commShow .cTop .mui-row > div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#main #commShow .center .mui-row > div a {
+#main #commShow .cTop .mui-row > div a {
   display: block;
+  text-align: center;
 }
-#main #commShow .center .mui-row > div a img {
+#main #commShow .cTop .mui-row > div a img {
   width: .66rem;
+}
+#main #commShow .cTop .mui-row > div a p {
+  margin-top: .1rem;
 }
 #main #commShow h4 {
   line-height: .4rem;
