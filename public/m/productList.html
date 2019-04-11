@@ -16,7 +16,7 @@
     <!-- 头部 -->
     <header id="header">
         <div class="left">
-            <a href="index.html" class="fa fa-arrow-left"></a>
+            <a href="#" class="fa fa-arrow-left"></a>
         </div>
         <div class="center">
            <h4>商品列表</h4>
@@ -69,11 +69,11 @@
                 <a href="./category.html" class="fa fa-bars"></a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="#" class="fa fa-shopping-cart"></a>
+                <a href="./userCart.html" class="fa fa-shopping-cart"></a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="#" class="fa fa-user"></a>
-            </div>   
+                <a href="./userCentre.html" class="fa fa-user"></a>
+            </div>
         </div>
     </footer>
 </body>
@@ -82,7 +82,7 @@
 <script id="produstTpl" type="text/html">
     {{each list value}}
         <div class="mui-col-xs-6">
-                <a href="#">
+                <a class = 'productDetail' href="#" data-id ={{value.id}}>
                     <img src="{{value.pic[0].picAddr}}" alt="">
                     <p>{{value.proName}}</p>
                     <span>¥{{value.price}}</span>
@@ -101,6 +101,7 @@
 <!-- 引入MUI框架js -->
 <script src='./lib/mui/js/mui.js'></script>
 <!-- 引入自己写的就是代码 -->
+<script src="./js/common.js"></script>
 <script src="./js/productList.js"></script>
 
 

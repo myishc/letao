@@ -118,53 +118,19 @@ h5 {
 #footer .mui-row > div .fa.active {
   color: gold;
 }
-#header .left a {
-  color: #fff;
-  font-size: .2rem;
-}
 #main {
-  background-color: #fff;
+  padding-top: .5rem;
 }
-#main .searchBox {
-  height: .8rem;
+#main .login .mui-input-group::before {
+  width: 0;
 }
-#main .produstList > div {
-  box-shadow: 0px 0px 10px 1px #e6002d;
-  border-radius: .05rem;
+#main .login .mui-input-group .mui-input-row::after {
+  left: 0;
 }
-#main .produstList > div .listTop span.active {
-  color: #e6002d;
+#main .login .mui-input-group .mui-button-row {
+  padding: .1rem 0;
+  height: .5rem;
 }
-#main .produstList > div .listTop.mui-card-header:after {
-  background-color: #fff;
-}
-#main .produstList > div .listCenter .mui-row > div {
-  padding: .05rem;
-}
-#main .produstList > div .listCenter .mui-row > div a {
-  padding: .05rem;
-  display: block;
-  text-align: center;
-}
-#main .produstList > div .listCenter .mui-row > div a img {
-  width: 100%;
-}
-#main .produstList > div .listCenter .mui-row > div a p {
-  line-height: .18rem;
-  margin-top: .1rem;
-  height: .32rem;
-  overflow: hidden;
-}
-#main .produstList > div .listCenter .mui-row > div a span {
-  margin-right: .05rem;
-}
-#main .produstList > div .listCenter .mui-row > div a del {
-  color: #ccc;
-}
-#main .produstList > div .listCenter .mui-row > div a p {
-  cursor: pointer;
-}
-#main .produstList > div .listCenter .mui-row > div a p i {
-  color: #e6002d;
-  font-size: .2rem;
+#main .login .mui-input-group .mui-button-row button {
+  margin-right: .1rem;
 }

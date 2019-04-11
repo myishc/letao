@@ -1,0 +1,103 @@
+
+@import 'base.less';
+
+
+#main{
+    .productList{
+        overflow: hidden;
+        .mui-table-view{
+            li{
+               &::after{
+                   left: 0;
+               }
+                padding: .1rem;
+                a{
+                    .left{
+                        text-align: center;
+                        padding-top: .1rem;
+                        img{
+                            max-width: 1rem;
+                            height: .8rem;
+                        }
+                        >div{
+                            input{
+                                position: static;
+                            }
+                        }
+                    }
+                    .mui-media-body{
+                        padding: .15rem;
+                        padding-bottom: 0;
+                       
+                        p{
+                            white-space: normal;
+                            line-height: .2rem;
+                            // text-shadow: 0px 0px 1px gold;
+                        }
+                        .price{
+                            span{
+                                color: @main-color;
+                                line-height: .5rem;
+                            }
+                            del{
+
+                            }
+                        }
+                        
+                        .message{
+                            display: flex;
+                            justify-content: space-between;
+                            span{
+                               padding-right: .2rem;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+//合计价格
+
+#submitOrder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .05rem .2rem;
+    background-color: #fff;
+    border-top: .01rem solid #ccc;
+    p{
+        margin-bottom:0;
+        span{
+            color: @main-color;
+            font-weight: 700;
+        }
+    }
+    
+    button{
+       
+    }
+}
+
+
+//编辑框
+.mui-popup-inner{
+    .mui-popup-title{
+        line-height: .3rem;
+    }
+    
+    .mui-table-view-cell{
+        padding: .1rem 0;
+        .size{
+            line-height: .4rem;
+            text-align: left;
+            .btnOne{
+                margin-left: .05rem;
+            }
+        }
+    }
+}
+
+

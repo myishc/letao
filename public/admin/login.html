@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>自己写的后台</title>
+    <title>自己写的pc登录</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/less/login.css">
 </head>
 <body>
-    哈哈哈哈哈
+    <section id="login">
+        <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-xs-2 control-label">用户名:</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control userName" id="inputEmail3" placeholder="请输入用户名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-xs-2 control-label">密码:</label>
+              <div class="col-xs-10">
+                <input type="password" class="form-control userPass" id="inputPassword3" placeholder="请输入密码">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-offset-2 col-xs-10">
+                <button type="button" class="btn btn-default btn-block" id="userLogin">登录</button>
+              </div>
+            </div>
+          </form>
+          <div class="userIcon">
+              <img src="./images/gej.gif" alt="">
+          </div>
+    </section> 
 </body>
 </html>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/js/login.js"></script>

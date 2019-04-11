@@ -1,57 +1,63 @@
 
-
+//入口函数
 $(function(){
 
-    var searchText,page=1,pageSize=2;
+    var productList = new ProductList();
 
-    // 搜索页面点击跳转
-    searchLoca();
-    //搜索按钮点击事件
-    getSearchData();
-    //切换分类升降排序
-    productArraoge();
-    //上拉下拉页面
-    pullPage();
-
-    //搜索页面跳转
-    function searchLoca (){
-        searchText = getQueryString('search');
-        searchData({
-            proName:searchText,
-            pageSize:pageSize
-        });
-    }
-
+        // 搜索页面点击跳转//搜索按钮点击事件//切换分类升降排序//上拉下拉页面 //跳转商品详情
+    productList.searchLoca().getSearchData().productArraoge().pullPage().goProductDetail();
     
 
+})
+
+
+var ProductList = function(){
+
+}
+ProductList.prototype = {
+
+    searchText: null,
+    page: 1,
+    pageSize: 2,
+
     //获取url的参数
-    function getQueryString(name) { 
+    getQueryString: function (name) { 
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
         var r = window.location.search.substr(1).match(reg); 
         if (r != null) return decodeURI(r[2]); 
         return null; 
-    } 
+    },
 
     //商品列表的搜索框
-    function getSearchData (){
+    getSearchData: function  (){
+        var that = this;
         $('#btnSearch').on('tap',function(){
-            searchText = $('#userText').val().trim();
-            searchData({
-                proName:searchText,
-                pageSize:pageSize
+            that.searchText = $('#userText').val().trim();
+            that.searchData({
+                proName: that.searchText,
+                pageSize: that.pageSize
             });
         })
-    }
+        return this;
+    },
+
+    //搜索页面跳转
+    searchLoca: function  (){
+        this.searchText = this.getQueryString('search');
+        this.searchData({
+            proName:this.searchText,
+            pageSize:this.pageSize
+        });
+        return this;
+    },
 
     //商品升降排列,分类
-
-    function productArraoge (){
-
+    productArraoge: function  (){
+        var that = this;
         $('.listTop span').on('tap',function(){
             
             var type =$(this).data('type');
             var ify = $(this).data('ify');
-            // console.log(type,ify);
 
             if(ify==1){
                 ify=2;
@@ -63,19 +69,20 @@ $(function(){
             $(this).data('ify',ify);
             $(this).addClass('active').siblings().removeClass('active');
 
-
             var obj = {
-                proName: searchText,
-                pageSize:pageSize,
+                proName: that.searchText,
+                pageSize: that.pageSize,
             }
             obj[type] = ify;
-            searchData(obj);
+            that.searchData(obj);
         })
-    }
+        return this;
+    },
 
-    
+
     //请求函数
-    function searchData (par){
+    searchData: function  (par){
+        var that = this;
         par.page = par.page||1;
         par.pageSize = par.pageSize||2;
         par.proName = par.proName || '鞋';
@@ -85,13 +92,19 @@ $(function(){
             success:function(data){
                 var html = template('produstTpl',{list:data.data});
                 $('.listCenter>div').html(html);
+
+                //重置下拉加载
+                mui('#refreshContainer').pullRefresh().refresh(true);
+                that.page =1;
+                that.pageSize = 2;
             }
         })
-    }
+        return this;
+    },
 
-    //上拉加载下拉刷新
-
-    function pullPage() {
+     //上拉加载下拉刷新
+    pullPage: function () {
+        var that = this;
         mui.init({
             // 初始化下拉刷新
             pullRefresh: {
@@ -117,9 +130,9 @@ $(function(){
     
         function pulldownRefresh() {
             setTimeout(function () {
-                searchData({
-                    proName: searchText,
-                    pageSize: pageSize
+                that.searchData({
+                    proName: that.searchText,
+                    pageSize: that.pageSize
                 });
                 // 当数据刷新完毕要结束下拉刷新 不结束会一直转圈圈下次也拉不了
                 mui('#refreshContainer').pullRefresh().endPulldownToRefresh(); //refresh completed
@@ -127,19 +140,19 @@ $(function(){
         }
      
         function pullupRefresh() {
-            page++;
+            that.page++;
             setTimeout(function () {
                 var obj = {
-                    page:page,
-                    pageSize:pageSize,
-                    proName: searchText
+                    page:that.page,
+                    pageSize:2,
+                    proName: that.searchText
                 }
 
                 $.ajax({
                     url: '/product/queryProduct',
                     data: obj,
                     success:function(data){
-                        pageSize+=data.data.length;//确保切换分类和升降序的时候还是那么多商品
+                        that.pageSize+=data.data.length;//确保切换分类和升降序的时候还是那么多商品
                         if(data.data.length>0){
                             var html = template('produstTpl',{list:data.data});
                             $('.listCenter>div').append(html);
@@ -151,16 +164,47 @@ $(function(){
                 })
             }, 1500);
         }
+        return this;
+    },
 
+    //跳转商品详情
+    goProductDetail:  function  (){
+        $('.listCenter').on('tap','.productDetail',function(e){
+            e.preventDefault();
+            var productId = $(this).data('id')
+            location = './productDetail.html?productId='+productId;
+        })
+        return this;
     }
+}
+
+   
 
 
-    //加入购物车
-    // function proAddCart(){
-    //     $('.addCart').on('tap',function(){
-            
-    //     })
-    // }
-})
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    
+
+   
+
+    
+
+
+    
+   
+
 
 

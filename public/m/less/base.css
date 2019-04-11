@@ -39,6 +39,10 @@ h5 {
   justify-content: center;
   align-items: center;
 }
+#header .left a {
+  color: #fff;
+  font-size: .25rem;
+}
 #header .left img {
   border-radius: 50%;
   width: 50%;
@@ -67,7 +71,7 @@ h5 {
 }
 #main {
   flex: 1;
-  background-color: #ccc;
+  background-color: #fff;
   overflow: hidden;
   position: relative;
 }

@@ -1,0 +1,134 @@
+
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+
+#main{
+    display: flex;
+    position: relative;
+    .left{
+        width: 250px;
+        background-color: #2f4050;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .user{
+            margin-top: 80px;
+            border: 10px solid #fff;
+            box-shadow: 0px 0px 10px 1px gold;
+            border-radius: 50%;
+            img{
+                width: 150px;
+                border-radius: 50%;
+            }
+           
+        }
+        p{
+            color: #fff;
+            font-size: 24px;
+            line-height: 50px;
+            margin-top: 10px;
+        }
+        .list-group{
+            width: 100%;
+            a{
+               background-color: transparent;
+               border-color: transparent;
+                color: #fff;
+               padding: 20px;
+               font-weight: 700;
+               cursor: pointer;
+               &.active,&:hover{
+                    background-color: #ccc;
+                    color: #000;
+               }
+               
+            }
+            #collapseExample{
+                
+                .well{
+                    background-color: transparent;
+                    border-color: transparent;
+                    padding: 0;
+                    margin-bottom: 0;
+                    .list-group{
+                        margin-bottom: 0;
+                        a{
+                            padding: 20px 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right{
+        flex: 1;
+        height: 100vh;
+        #header{
+            height: 100px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            
+            a{
+                span{
+                    font-size: 14px;
+                    margin-left: 2px;
+                }
+                &::before{
+                    vertical-align: middle;
+                    font-size: 24px;
+                }
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        #content{
+            padding: 30px;
+            table{
+                thead,tbody{
+                    tr{
+                        th{
+                            text-align: center;
+                            position: relative;
+                            #allSelect{
+                                position: absolute;
+                                left: 50%;
+                                margin-left: -7px;
+                                
+                             }
+                        }
+                    }
+                }
+                thead{
+                    tr{
+                        .row{
+                            span{
+                                margin-left: -55px;
+                            }
+                        }
+                    } 
+                }
+            }
+            .container{
+                position: absolute;
+                bottom: 0;
+                margin: 0;
+                width: auto;
+                margin-bottom: 150px;
+                
+            }
+        }
+    }
+}
+
+
+
+

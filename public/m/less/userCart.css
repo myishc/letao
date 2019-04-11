@@ -118,53 +118,70 @@ h5 {
 #footer .mui-row > div .fa.active {
   color: gold;
 }
-#header .left a {
-  color: #fff;
-  font-size: .2rem;
-}
-#main {
-  background-color: #fff;
-}
-#main .searchBox {
-  height: .8rem;
-}
-#main .produstList > div {
-  box-shadow: 0px 0px 10px 1px #e6002d;
-  border-radius: .05rem;
-}
-#main .produstList > div .listTop span.active {
-  color: #e6002d;
-}
-#main .produstList > div .listTop.mui-card-header:after {
-  background-color: #fff;
-}
-#main .produstList > div .listCenter .mui-row > div {
-  padding: .05rem;
-}
-#main .produstList > div .listCenter .mui-row > div a {
-  padding: .05rem;
-  display: block;
-  text-align: center;
-}
-#main .produstList > div .listCenter .mui-row > div a img {
-  width: 100%;
-}
-#main .produstList > div .listCenter .mui-row > div a p {
-  line-height: .18rem;
-  margin-top: .1rem;
-  height: .32rem;
+#main .productList {
   overflow: hidden;
 }
-#main .produstList > div .listCenter .mui-row > div a span {
-  margin-right: .05rem;
+#main .productList .mui-table-view li {
+  padding: .1rem;
 }
-#main .produstList > div .listCenter .mui-row > div a del {
-  color: #ccc;
+#main .productList .mui-table-view li::after {
+  left: 0;
 }
-#main .produstList > div .listCenter .mui-row > div a p {
-  cursor: pointer;
+#main .productList .mui-table-view li a .left {
+  text-align: center;
+  padding-top: .1rem;
 }
-#main .produstList > div .listCenter .mui-row > div a p i {
+#main .productList .mui-table-view li a .left img {
+  max-width: 1rem;
+  height: .8rem;
+}
+#main .productList .mui-table-view li a .left > div input {
+  position: static;
+}
+#main .productList .mui-table-view li a .mui-media-body {
+  padding: .15rem;
+  padding-bottom: 0;
+}
+#main .productList .mui-table-view li a .mui-media-body p {
+  white-space: normal;
+  line-height: .2rem;
+}
+#main .productList .mui-table-view li a .mui-media-body .price span {
   color: #e6002d;
-  font-size: .2rem;
+  line-height: .5rem;
+}
+#main .productList .mui-table-view li a .mui-media-body .message {
+  display: flex;
+  justify-content: space-between;
+}
+#main .productList .mui-table-view li a .mui-media-body .message span {
+  padding-right: .2rem;
+}
+#submitOrder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .05rem .2rem;
+  background-color: #fff;
+  border-top: .01rem solid #ccc;
+}
+#submitOrder p {
+  margin-bottom: 0;
+}
+#submitOrder p span {
+  color: #e6002d;
+  font-weight: 700;
+}
+.mui-popup-inner .mui-popup-title {
+  line-height: .3rem;
+}
+.mui-popup-inner .mui-table-view-cell {
+  padding: .1rem 0;
+}
+.mui-popup-inner .mui-table-view-cell .size {
+  line-height: .4rem;
+  text-align: left;
+}
+.mui-popup-inner .mui-table-view-cell .size .btnOne {
+  margin-left: .05rem;
 }

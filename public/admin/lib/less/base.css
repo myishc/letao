@@ -1,0 +1,108 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+#main {
+  display: flex;
+  position: relative;
+}
+#main .left {
+  width: 250px;
+  background-color: #2f4050;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#main .left .user {
+  margin-top: 80px;
+  border: 10px solid #fff;
+  box-shadow: 0px 0px 10px 1px gold;
+  border-radius: 50%;
+}
+#main .left .user img {
+  width: 150px;
+  border-radius: 50%;
+}
+#main .left p {
+  color: #fff;
+  font-size: 24px;
+  line-height: 50px;
+  margin-top: 10px;
+}
+#main .left .list-group {
+  width: 100%;
+}
+#main .left .list-group a {
+  background-color: transparent;
+  border-color: transparent;
+  color: #fff;
+  padding: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#main .left .list-group a.active,
+#main .left .list-group a:hover {
+  background-color: #ccc;
+  color: #000;
+}
+#main .left .list-group #collapseExample .well {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+  margin-bottom: 0;
+}
+#main .left .list-group #collapseExample .well .list-group {
+  margin-bottom: 0;
+}
+#main .left .list-group #collapseExample .well .list-group a {
+  padding: 20px 40px;
+}
+#main .right {
+  flex: 1;
+  height: 100vh;
+}
+#main .right #header {
+  height: 100px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+#main .right #header a span {
+  font-size: 14px;
+  margin-left: 2px;
+}
+#main .right #header a::before {
+  vertical-align: middle;
+  font-size: 24px;
+}
+#main .right #header a:hover {
+  text-decoration: none;
+}
+#main .right #content {
+  padding: 30px;
+}
+#main .right #content table thead tr th,
+#main .right #content table tbody tr th {
+  text-align: center;
+  position: relative;
+}
+#main .right #content table thead tr th #allSelect,
+#main .right #content table tbody tr th #allSelect {
+  position: absolute;
+  left: 50%;
+  margin-left: -7px;
+}
+#main .right #content table thead tr .row span {
+  margin-left: -55px;
+}
+#main .right #content .container {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  width: auto;
+  margin-bottom: 150px;
+}

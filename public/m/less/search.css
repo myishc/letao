@@ -172,6 +172,6 @@ h5 {
 #main .history > div .hisCenter ul li {
   padding: .12rem;
 }
-#main .history > div .hisCenter ul li .mui-table-view-cell:after {
+#main .history > div .hisCenter ul li.mui-table-view-cell:after {
   left: 0;
 }
