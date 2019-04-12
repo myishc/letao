@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>一级分类页面</title>
+    <title>二级分类页面</title>
     <link rel="stylesheet" href="./lib//bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/less/twoCatetory.css">
 </head>
@@ -22,8 +22,8 @@
                 <div class="collapse in" id="collapseExample">
                     <div class="well">
                         <ul class="list-group">
-                            <a href="firstCatetory.html" class="list-group-item active">一级分类</a>
-                            <a href="twoCatetory.html" class="list-group-item">二级分类</a>
+                            <a href="firstCatetory.html" class="list-group-item">一级分类</a>
+                            <a href="twoCatetory.html" class="list-group-item active">二级分类</a>
                         </ul>
                     </div>
                 </div>
@@ -43,11 +43,20 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                             aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+                                    <h4 class="modal-title" id="myModalLabel">添加品牌</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <span>分类名称:</span>
-                                    <input type="search" class="form-control inputCategory" placeholder="请输入新增分类名称">
+                                    <span>品牌名称:</span>
+                                    <input type="search" class="form-control addBrandName" placeholder="请输入新增品牌名称">
+                                    <span>所属分类:</span>
+                                    <select id="categoryList" class="form-control">
+                                        
+                                    </select>
+                                    <span>品牌logo:</span>
+                                    <input type="file" class="form-control addBrandImg" placeholder="请上传品牌图片">
+                                    <div class="logo">
+                                        <img src="" alt="">
+                                    </div>      
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -56,12 +65,14 @@
                             </div>
                         </div>
                     </div>
-                <table class="table table-hover table-bordered text-center">
+                <table class="table table-hover table-bordered text-center" id="table">
                     <thead>
                         <tr>
                             <th class="row"><span>全选</span><input type="checkbox" id="allSelect"></th>
-                            <th>分类编号</th>
-                            <th>分类名称</th>
+                            <th>品牌编号</th>
+                            <th>品牌名称</th>
+                            <th>品牌logo</th>
+                            <th>所属分类</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,11 +89,13 @@
     </main>
 </body>
 </html>
-<script id="firstCateListTpl" type="text/html">
+<script id="twoCateListTpl" type="text/html">
     {{each rows value}}
     <tr>
         <th scope="row"><input type="checkbox" class='onlySelect'></th>
         <td>{{value.id}}</td>
+        <td>{{value.brandName}}</td>
+        <td><img src="{{value.brandLogo}}" alt=""></td>
         <td>{{value.categoryName}}</td>
     </tr>
     {{/each}}
@@ -93,3 +106,4 @@
 <script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
 <script src="./lib/js/common.js"></script>
 <script src="./lib/js/twoCatetory.js"></script>
+

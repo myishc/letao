@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>自己写的分类页</title>
     <!-- 引入MUI框架css -->
@@ -12,14 +14,19 @@
     <!-- 引入自己写的样式 -->
     <link rel="stylesheet" href="./less/userRegister.css">
 </head>
+
 <body>
+    <!-- 遮罩层 -->
+    <div class="mask">
+        <img src="./images/load.gif" alt="">
+    </div>
     <!-- 头部 -->
     <header id="header">
         <div class="left">
             <a href="#" class="fa fa-arrow-left"></a>
         </div>
         <div class="center">
-           <h4>用户注册</h4>
+            <h4>用户注册</h4>
         </div>
         <div class="right">
             <a href="index.html" class="fa fa-home"></a>
@@ -54,7 +61,7 @@
                 <button type="button" class="mui-btn mui-btn-success btnRegister mui-btn-primary">注册</button>
             </div>
         </div>
-        </main>
+    </main>
 
     <!-- 底部 -->
     <footer id="footer">
@@ -74,6 +81,7 @@
         </div>
     </footer>
 </body>
+
 </html>
 
 <!-- 引入zepto -->
@@ -85,6 +93,3 @@
 <!-- 引入自己写的就是代码 -->
 <script src="./js/common.js"></script>
 <script src="./js/userRegister.js"></script>
-
-
-

@@ -17,9 +17,6 @@ $(function(){
      //添加分类   
     }).addCategoryData()
 
-
-    //单选多选;           //退出登录
-    clickOnlySelect();  clickLogout();
 })  
 
 

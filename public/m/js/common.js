@@ -5,7 +5,10 @@ $(function(){
     var common = new Common();
 
     common.goHistoryPage();
+
 })
+
+
 
 
 
@@ -20,6 +23,12 @@ Common.prototype = {
 
         $('.fa-arrow-left').attr('href','javascript:history.back(-1)');
         
-    }
+        return this;
+    },
 
+    //
+   
 }
+
+
+

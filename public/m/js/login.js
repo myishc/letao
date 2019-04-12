@@ -29,6 +29,18 @@ Login.prototype = {
             var userPass = $('.userPass').val().trim();
             console.log(userName,userPass);
             $.ajax({
+                beforeSend: function () {
+                    // console.log('请求之前会调用的回调函数');
+                    // 发请求之前显示遮罩层
+                    $('.mask').show();
+                },
+                complete: function () {
+                    // console.log('请求之后会调用的回调函数');
+                    // 请求完成要隐藏遮罩层
+                    setTimeout(function () {
+                        $('.mask').hide();
+                    }, 3000);
+                },
                 url: '/user/login',
                 type: 'post',
                 data:{

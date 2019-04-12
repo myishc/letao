@@ -13,12 +13,10 @@ $(function(){
             totalPages: index.totalPages,
             callback: index.getUserData
         });
+
+        //改变用户名状态
     }).changeUserStatus();
 
-
-    //退出登录
-    clickLogout();
-    
 })
 
 
@@ -27,6 +25,7 @@ function Index (){
    
 
 };
+
 
 
 Index.prototype = {
@@ -43,11 +42,11 @@ Index.prototype = {
                 pageSize: 5
             },
             success:function(data){
-                console.log(data);
                 that.totalPages =Math.ceil(data.total/that.atPaging);
                 var html = template('userListTpl',data);
                 $('tbody').html(html);
                 callback && callback();
+                
             }           
         })
 
@@ -73,7 +72,9 @@ Index.prototype = {
                 type: 'post',
                 success: function(row){
                     if(row.success){
-                        that.getUserData();
+                        // atPage =  atPage || 1;
+                        that.getUserData(1);
+                
                     }else{
                         alert('修改失败');
                     }
@@ -83,6 +84,7 @@ Index.prototype = {
         return this;
     },
 }
+
 
 
 

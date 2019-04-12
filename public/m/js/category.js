@@ -53,6 +53,18 @@ Category.prototype = {
     leftAjax: function (){
         var that = this;
         $.ajax({
+            beforeSend: function () {
+                // console.log('请求之前会调用的回调函数');
+                // 发请求之前显示遮罩层
+                $('.mask').show();
+            },
+            complete: function () {
+                // console.log('请求之后会调用的回调函数');
+                // 请求完成要隐藏遮罩层
+                setTimeout(function () {
+                    $('.mask').hide();
+                }, 3000);
+            },
             url: '/category/queryTopCategory',
             success: function(data){
                 var html =template('categoryLeftTpl',{list:data.rows});
@@ -66,6 +78,18 @@ Category.prototype = {
     // 请求右边品牌数据
     rightAjax: function (id){
         $.ajax({
+            beforeSend: function () {
+                // console.log('请求之前会调用的回调函数');
+                // 发请求之前显示遮罩层
+                $('.mask').show();
+            },
+            complete: function () {
+                // console.log('请求之后会调用的回调函数');
+                // 请求完成要隐藏遮罩层
+                setTimeout(function () {
+                    $('.mask').hide();
+                }, 3000);
+            },
             url: '/category/querySecondCategory',
             data:{id:id},
             success: function(data){
@@ -78,6 +102,7 @@ Category.prototype = {
 
     // 切换分类页面
     togglePage: function (){
+        var that = this
         $('#commList ul li').on('tap',(function(){
             let id = $(this).data('id');
             that.rightAjax(id);
@@ -88,9 +113,21 @@ Category.prototype = {
 
     //跳转到购物车
     goCartPage: function(){
-        var that = this
+        
         $('#goCart').on('tap',function(){
             $.ajax({
+                beforeSend: function () {
+                    // console.log('请求之前会调用的回调函数');
+                    // 发请求之前显示遮罩层
+                    $('.mask').show();
+                },
+                complete: function () {
+                    // console.log('请求之后会调用的回调函数');
+                    // 请求完成要隐藏遮罩层
+                    setTimeout(function () {
+                        $('.mask').hide();
+                    }, 3000);
+                },
                 url: '/cart/queryCart',
                 success: function(row){
                     console.log(row);

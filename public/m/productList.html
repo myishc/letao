@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>自己写的分类页</title>
     <!-- 引入MUI框架css -->
@@ -12,14 +14,19 @@
     <!-- 引入自己写的样式 -->
     <link rel="stylesheet" href="./less/productList.css">
 </head>
+
 <body>
+    <!-- 遮罩层 -->
+    <div class="mask">
+        <img src="./images/load.gif" alt="">
+    </div>
     <!-- 头部 -->
     <header id="header">
         <div class="left">
             <a href="#" class="fa fa-arrow-left"></a>
         </div>
         <div class="center">
-           <h4>商品列表</h4>
+            <h4>商品列表</h4>
         </div>
         <div class="right">
             <a href="index.html" class="fa fa-home"></a>
@@ -77,19 +84,20 @@
         </div>
     </footer>
 </body>
+
 </html>
 
 <script id="produstTpl" type="text/html">
     {{each list value}}
-        <div class="mui-col-xs-6">
-                <a class = 'productDetail' href="#" data-id ={{value.id}}>
-                    <img src="{{value.pic[0].picAddr}}" alt="">
-                    <p>{{value.proName}}</p>
-                    <span>¥{{value.price}}</span>
-                    <del>¥{{value.oldPrice}}</del>
-                    <p>销量:{{value.num}}<i class='fa fa-shopping-cart addCart'></i></p>
-                </a>
-            </div>
+    <div class="mui-col-xs-6">
+        <a class='productDetail' href="#" data-id={{value.id}}>
+            <img src="{{value.pic[0].picAddr}}" alt="">
+            <p>{{value.proName}}</p>
+            <span>¥{{value.price}}</span>
+            <del>¥{{value.oldPrice}}</del>
+            <p>销量:{{value.num}}<i class='fa fa-shopping-cart addCart'></i></p>
+        </a>
+    </div>
     {{/each}}
 </script>
 
@@ -103,6 +111,3 @@
 <!-- 引入自己写的就是代码 -->
 <script src="./js/common.js"></script>
 <script src="./js/productList.js"></script>
-
-
-

@@ -29,6 +29,18 @@ ProductDetail.prototype ={
         that.id =that.getQueryString('productId');
     
         $.ajax({
+            beforeSend: function () {
+                // console.log('请求之前会调用的回调函数');
+                // 发请求之前显示遮罩层
+                $('.mask').show();
+            },
+            complete: function () {
+                // console.log('请求之后会调用的回调函数');
+                // 请求完成要隐藏遮罩层
+                setTimeout(function () {
+                    $('.mask').hide();
+                }, 3000);
+            },
             url: '/product/queryProductDetail',
             data:{
                 id:that.id
@@ -91,6 +103,18 @@ ProductDetail.prototype ={
 
             //判断是否登录
             $.ajax({
+                beforeSend: function () {
+                    // console.log('请求之前会调用的回调函数');
+                    // 发请求之前显示遮罩层
+                    $('.mask').show();
+                },
+                complete: function () {
+                    // console.log('请求之后会调用的回调函数');
+                    // 请求完成要隐藏遮罩层
+                    setTimeout(function () {
+                        $('.mask').hide();
+                    }, 3000);
+                },
                 url: '/cart/addCart',
                 type: 'post',
                 data: {
@@ -117,6 +141,18 @@ ProductDetail.prototype ={
         var that = this
         $('#goCart').on('tap',function(){
             $.ajax({
+                beforeSend: function () {
+                    // console.log('请求之前会调用的回调函数');
+                    // 发请求之前显示遮罩层
+                    $('.mask').show();
+                },
+                complete: function () {
+                    // console.log('请求之后会调用的回调函数');
+                    // 请求完成要隐藏遮罩层
+                    setTimeout(function () {
+                        $('.mask').hide();
+                    }, 3000);
+                },
                 url: '/cart/queryCart',
                 success: function(row){
                     console.log(row);

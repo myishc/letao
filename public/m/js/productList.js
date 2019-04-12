@@ -87,6 +87,18 @@ ProductList.prototype = {
         par.pageSize = par.pageSize||2;
         par.proName = par.proName || '鞋';
         $.ajax({
+            beforeSend: function () {
+                // console.log('请求之前会调用的回调函数');
+                // 发请求之前显示遮罩层
+                $('.mask').show();
+            },
+            complete: function () {
+                // console.log('请求之后会调用的回调函数');
+                // 请求完成要隐藏遮罩层
+                setTimeout(function () {
+                    $('.mask').hide();
+                }, 3000);
+            },
             url: '/product/queryProduct',
             data: par,
             success:function(data){
@@ -149,6 +161,18 @@ ProductList.prototype = {
                 }
 
                 $.ajax({
+                    beforeSend: function () {
+                        // console.log('请求之前会调用的回调函数');
+                        // 发请求之前显示遮罩层
+                        $('.mask').show();
+                    },
+                    complete: function () {
+                        // console.log('请求之后会调用的回调函数');
+                        // 请求完成要隐藏遮罩层
+                        setTimeout(function () {
+                            $('.mask').hide();
+                        }, 3000);
+                    },
                     url: '/product/queryProduct',
                     data: obj,
                     success:function(data){
